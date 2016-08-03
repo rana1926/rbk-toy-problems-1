@@ -35,11 +35,19 @@
  */
 
 'use strict';
-
-var compose = function(){
-
+var compose = function(arg){
+  var result;
+  for (var i = 0; i < arguments.length; i++) {
+    console.log(arguments[i])
+    
+   }
+  return result;
 };
 
-var pipe = function(){
+/*var pipe = function(){
 
-};
+};*/
+var greet = function(name){ return 'hello ' + name;}
+var exclaim = function(statement) { return statement.toUpperCase() + '!';}
+var welcome = compose(greet, exclaim);
+welcome('phillip');
