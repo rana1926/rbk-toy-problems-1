@@ -27,5 +27,39 @@ var DIGIT_VALUES = {
 };
 
 var translateRomanNumeral = function(romanNumeral){
-
+	var result = 0;
+	var arr = [];
+	for (var i = 0; i < romanNumeral.length; i++) {
+		if(romanNumeral.charAt(i)=== 'I' ){
+			arr.push(1)
+		}
+		if(romanNumeral.charAt(i)=== 'V'){
+			arr.push(5)
+		}
+		if(romanNumeral.charAt(i)=== 'X'){
+			arr.push(10)
+		}
+		if(romanNumeral.charAt(i)=== 'L'){
+			arr.push(50)
+		}
+		if(romanNumeral.charAt(i)=== 'C'){
+			arr.push(100)
+		}
+		if(romanNumeral.charAt(i)=== 'D'){
+			arr.push(500)
+		}
+		if(romanNumeral.charAt(i)=== 'M'){
+			arr.push(1000)
+		}
+	}
+	for (var j = 0; j < arr.length; j++) {
+		if(arr[j]<arr[j+1]){
+			console.log(arr)
+			result=result-arr[j] 
+		}
+		else{
+			result=result+arr[j]
+		}
+	}
+	return result;
 };
