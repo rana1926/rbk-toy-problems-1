@@ -14,13 +14,25 @@ str1 is 'steak' and str2 is 'steakk' should return false, because there is only 
 
 Try to optimize your solution for time complexity.
 */
+scramble('rkqodlw','world')
+scramble('satak','steak')
+scramble('satak', 'steakk')
 
 function scramble(str1,str2){
-
+	result = false;
+	for (var i = 0; i < str2.length; i++) {
+		if(str1.indexOf(str2[i])===-1){
+			return false;
+		}
+		else {
+			str1.replace(str2[i], '')
+		}
+	}
+	return true;
 };
 
 //What is the time complexity of your solution?
-var timeComplexity = 'O(??)';
+var timeComplexity = 'O(n)';
 
 
 /*
@@ -51,7 +63,14 @@ console.log(arr); //should [1,2,7,5,6] - the original array was modified
 */
 
 Array.prototype.splice = function(from,count){
-
+	var removed =[]
+	for (var i = 0; i < count; i++) {
+		removed.push(this[from])
+		//delete
+		from++
+	}
+	
+	return removed;
 }
 
 
