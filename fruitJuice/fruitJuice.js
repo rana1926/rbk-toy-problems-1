@@ -20,16 +20,28 @@ of banana juice is only 0.25 (300 units apple juice + 100 units banana juice)
 Complete the functions in order to provide this functionality.
 */
 
-function Jar() {
+var Jar =function () {
   // TODO
+  this.juice = []; 
 }
 
 Jar.prototype.add = function(amount, type) {
   // TODO
+	if(this.juice.length===0){
+		this.juice.push([type, amount])
+	}
+	else{
+		for (var i = 0; i < this.juice.length; i++) {
+			if(this.juice[i].indexOf(type)>-1){
+				this.juice[i][this.juice[i].indexOf(amount)]=this.juice[i][this.juice[i].indexOf(amount)]+amount
+			}
+		}
+	}
 };
 
 Jar.prototype.pourOut = function(amount) {
   // TODO
+  if()
 };
 
 Jar.prototype.getTotalAmount = function() {
