@@ -14,7 +14,16 @@ abc(); // should return 'a' again on this fourth call
 */
 
 function makeLooper(string){
-
+	var counter = -1;
+	return function(){
+		if(counter===string.length-1){
+			counter=-1;
+		}
+		else{
+			counter++
+			return string.charAt(counter) 					
+		}
+	}
 };
 
 
