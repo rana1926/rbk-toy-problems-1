@@ -15,8 +15,22 @@ singleNumber(arr);//should return 6 because it only appear once
 */
 
 function singleNumber(arr){
-
+	arr = arr.sort();
+	for (var i = 0; i < arr.length; i=i+2) {
+		if(arr[i]!==arr[i+1]){
+			return arr[i]
+		}
+	}
 }
+/*function singleNumber(arr){
+	var result = [];
+	for (var i = 0; i < arr.length; i++) {
+		arr[i]
+	}
+}*/
+
+arr = [2,4,3,6,8,2,3,4,8];
+singleNumber(arr);
 
 /*
 Problem 2 (medium):
@@ -33,7 +47,15 @@ twoSum(nums,9); //should return [0,1] because nums[0] + nums[1] = 2 + 7 = 9;
 */
 
 function twoSum(nums, target){
-
+	var result = [];
+	for (var i = 0; i < nums.length; i++) {
+		var diff = target - nums[i]
+		if(nums.indexOf(diff)>-1){
+			result.push(i, nums.indexOf(diff))
+			return result;
+		}
+	}
+	return "no result"
 }
 
 /*
