@@ -12,5 +12,10 @@
 */
 
 var longestPalindrome = function (string) {
-  
+	var s = '#'+string.split('').join('#')+'#';
+	var p =new Array(s.length);
+	for (var i = 1; i < p.length-1; i++) {
+		var mirror = 2*
+	}
+  	return p;
 };
