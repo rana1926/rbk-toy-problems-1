@@ -18,4 +18,4 @@ var longestPalindrome = function (string) {
 		var mirror = 2*
 	}
   	return p;
-};
+};dsgds

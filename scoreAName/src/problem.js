@@ -15,12 +15,22 @@ To run the tests run npm install and npm test.
 fs = require('fs');
 
 var readFile = function (){
-  var contents = fs.readfileSync("./names.txt").toString();
+  var contents = fs.readFileSync("./names.txt").toString();
   return contents.split(",");
 }
 
 var totalNameScores = function(){
-  return 0;
+	var contents = readFile().sort();
+	var result=0;
+	var nameScore = 0;
+	for (var i = 0; i < contents.length; i++) {
+		//contents[i]=contents[i].substring(1,contents[i].length-1)
+		for (var j = 0; j < contents[i].length; j++) {
+			nameScore = nameScore+ contents[i].toUpperCase().charCodeAt(j)//-64;
+		}
+		result +=nameScore*(i+1)
+		nameScore=0;
+	}
+	return result;
 }
-
 module.exports = {totalNameScores};
