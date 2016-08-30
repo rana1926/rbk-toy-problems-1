@@ -29,30 +29,9 @@ var primeSieve = function(start, end) {
   // to do
   var result=[];
   for (var i = start; i <= end; i++) {
-  	if(primeTester(i)===true){
+  	if(primeTester(i)){
   		result.push(i);
   	}
   }
   return result.toString();
 };
-/*
-var primeSieveA = function(start, end) {
-  // to do
-  var a=[];
-  var result=[];
-  for (var i = start; i <= end; i++) {
-  	a.push(true);
-  }
-  for (var i = 2; i < Math.pow(a.length,0.5); i++) {
-  	if(a[i]===true){
-  		for (var j=Math.pow(i,2); j < a.length; j++) {
-  			if(){
-  				a[j]===false;
-  			}
-  			result.push(i);
-  		}
-  	}
-  }
-  return result.toString();;
-};
-*/
